@@ -1,68 +1,90 @@
-console.log("---script 02-01---");
-const vegetables=["Капуста","Репа","Редиска","Морковь"];
-const text=vegetables.join("I");
-console.log(text);
+console.log("---script 3-1---");
+var number =4;
+var result =0;
+for(var i=1; i <=number;i++){
+  result += i** 2;
+  console.info ('$ {i} ** 2 =$ {results}')
+}
+console.info('Resalt=${rezalt}');
 
 
-console.log("---script 02-02---")
-let names = 'Вася, Петя, Вова, Олег';
-let arr = names.split(', ');
-console.log(arr);  ["Вася", "Петя", "Вова","Олег"]
+console.log('---script 3-2  ---');
+var numbers = [3,5,12,9,23,93,17];
+var filtered_numbers = [];
+var sum1=0;
 
-
-
-console.log("---script 3-4---");
-const fruits=['Яблоко', 'ананас','груша,'];
-const fruitsInUpperCase=Array();
-fruits.forEach(value =>{
-  fruitsInUpperCase.push(value.toUpperCase())
-})
-console.log(fruitsInUpperCase)
-
-
-
-  console.log('--- script 3-6---');
-  function getSum(){
-    var results=0;
-    for (i =0;i< arguments.length;i++){
-      results += arguments [i];
-    }
-    return results;
+numbers.forEach(item=>{
+  if (2< item && item <20){
+    filtered_numbers.push(item);
+    sum1 +=item;
+    console.log('item=${item}, sum1=$(sum1)')
   }
-  const sum= getSum(1,2,3,4);
-  console.log(sum);
+});
 
-  console.log("---script 3-7---")
-  const array =[1,"hello",2,3,4,5,6,7,null];
-  const numberArray ={};
-  array.forEach(item => {
-    if(Number.isInteger (item)){
-      numberArray.push (item)
-      console.log('item = ${item}, sum=$ {sum}' );  
-     }});
-     console.log (numberArray);
-     
 
-     console.log("---script 03-08---");
-     function arrayTesting(items){
-       if (Array.isArray(items)){
-         var found= items.find(x => x==true);
-         return found
-       }
-     }
-     const haveTrueValue = arrayTesting([0,false,null,1]);
-     console.log(haveTrueValue);
-     const dontHaveTrueValue = arrayTesting([0,false,null,0]);
-     console.log (dontHaveTrueValue);
+console.log('---script 03-04---');
+function addProperty (key,value,object){
+  if (object.hasOwnProperty (key)){
+    console.log ('Уже есть');
+  }
+object [key]=value;
+}
+var obj ={
+    name:'Artur'
+};
+addProperty ('name',"Artur",obj);
+addProperty('age',36,obj);
 
-     console.log("---script 3-5---")
-     function addOneForAll(){
-       var result_array =[];
-       for (i=0;i<arguments.length;i++){
-         result_array[i] = arguments[i]+1;
-       }
-       return result_array;
-     }
-     const va1=addOneForAll(1,2,3,4);
-     console.log(va1);
+console.log ('---03-05---');
+for (var i=1;i<=10;i++){
+  if (i % 3==0){
+    console.log ('FizBuz');
+  }
+  else if (i %2==0){
+    console.log ('Fiz');
+  } else if (i%2 !=0){
+    console.log ('Buz');
+  }
+}
+
+console.log('---script 03-06---');
+
+function factorial (arg){
+  var result=1;
+  for (let i=1; i<=arg; i++){
+    result=result * 1;
+  }
+  return result;
+}
+var n =factorial(7);
+console.log(n);
+
+
+console.log ('---script 03-03---')
+var matrix =[[1,6,3,'6'], [10,15,13,'10']];
+var sum2 =0 ;
+matrix.forEash (
+  collection =>{
+
+    if (Array.isArray (collection)){
+
+      collection.forEach(item =>{
+        if (!isNan (item) && item %2 == 0){
+          var number=Number.isInteger(item)?item: Number(item);
+          sun2 +=number;
+          console.log ('item = $ {item}, sum2 =$ {sum2}');
+        }
+      });
+    }
+    else{
+      console.log('collection is not an array');
+    }
+  }
+);
+console.log ('Sum= ${sum}');
+
+
+
+
+
 
